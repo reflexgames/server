@@ -1,64 +1,183 @@
 <!DOCTYPE html>
+<!-- Template by html.am -->
 <html>
-<body style="background-color:green;">
-<div id="page">
-    <div id="header">
-        <a href="http://wireless.fm.intel.com/test/index.php">
-            <img src="http://wireless.fm.intel.com/test/logo2.png" border=0 >
-        </a>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>3 Column Layout</title>
+	<style type="text/css">
 
-         <h2><a href="http://moss.ger.ith.intel.com/sites/MWG-IS/Pages/Default.aspx" border=1>Mobility Group</a></h2>
+		/* Layout */
+		body {
+			min-width: 630px;
+		}
 
-        <div id="navigation"> 
-            <a href="#">About</a>
-            <a href="#">Reports</a>
-            <a href="#">Projects</a>
-            <a href="#">Checklists</a>
-            <a href="#">Join the team</a>
-            <a href="http://www.youtube.com/dezegames">YouTube Channel</a>
-            <a href="#">Software Realese dates</a>
-        </div>
-    </div>
+		#container {
+			padding-left: 200px;
+			padding-right: 190px;
+		}
+		
+		#container .column {
+			position: relative;
+			float: left;
+		}
+		
+		#center {
+			padding: 10px 20px;
+			width: 100%;
+		}
+		
+		#left {
+			width: 180px;
+			padding: 0 10px;
+			right: 240px;
+			margin-left: -100%;
+		}
+		
+		#right {
+			width: 130px;
+			padding: 0 10px;
+			margin-right: -100%;
+		}
+		
+		#footer {
+			clear: both;
+		}
+		
+		/* IE hack */
+		* html #left {
+			left: 150px;
+		}
 
-    <div id="main"></div>
-    <div id="footer"></div>
-</div>
-</nav>
+		/* Make the columns the same height as each other */
+		#container {
+			overflow: hidden;
+		}
 
-<h1>Welcome to the DezeGames site</h1>
-<p>*In devolpment*.</p>
-<p>
-  
-  
-  
-  
-  
-</p>
-<h2>Our plans and projects</h2>
-<span style="color:#000000">1: ClashPlugin for minecraft 1.8</p>
-<p>2: Coding game for ReflexGames</p>
-<p>3: Getting traffic to websites</p>
-<p>4: PirateAge game release</p>
-<p>5: VirtualWorld game devolpment</p>
-<p></p>
-<p></p>
-<p>Is you want to help with anything put your mail in the sumbit box under this text to apply and we will mail you with details and questions</p>
-Basic Client-Side Mailto: Form:
+		#container .column {
+			padding-bottom: 1001em;
+			margin-bottom: -1000em;
+		}
 
-<form method="post" action="mailto:someone@$nailmail.com" enctype="text/plain">
-<input type="text" name="username"> : name <br>
-<input type="text" name="email"> : email <br>
-comments <br>
-<textarea name="comments" rows="10" wrap="hard">
-</textarea>
-<input name="redirect" type="hidden" value="index.html">
-<input name="NEXT_URL" type="hidden" value="index.html"><br>
-<input type="submit" value="Send">
-<input type="reset" value="Clear">
-</form>
-<span style="color:#000000">We are currently working on a new plugin for minecraft: Clash Of Crafters
-<p>Join the server: virtualworld.mcjoin.it = this is a subdomain and can fail sometimes :(</p>
+		/* Fix for the footer */
+		* html body {
+			overflow: hidden;
+		}
+		
+		* html #footer-wrapper {
+			float: left;
+			position: relative;
+			width: 100%;
+			padding-bottom: 10010px;
+			margin-bottom: -10000px;
+			background: #fff;
+		}
 
-mailto - Web-based email Form Handler: http://www.washington.edu/webinfo/mailto/
+		/* Aesthetics */
+		body {
+			margin: 0;
+			padding: 0;
+			font-family:Sans-serif;
+			line-height: 1.5em;
+		}
+		
+		p {
+			color: #555;
+		}
+
+		nav ul {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+		}
+		
+		nav ul a {
+			color: darkgreen;
+			text-decoration: none;
+		}
+
+		#header, #footer {
+			font-size: large;
+			padding: 0.3em;
+			background: #BCCE98;
+		}
+
+		#left {
+			background: #DAE9BC;
+		}
+		
+		#right {
+			background: #F7FDEB;
+		}
+
+		#center {
+			background: #fff;
+		}
+
+		#container .column {
+			padding-top: 1em;
+		}
+		
+	</style>
+	
+	<script type="text/javascript">
+		/* =============================
+		This script generates sample text for the body content. 
+		You can remove this script and any reference to it. 
+		 ============================= */
+		var bodyText=["The smaller your reality, the more convinced you are that you know everything.", "If the facts don't fit the theory, change the facts.", "The past has no power over the present moment.", "This, too, will pass.", "</p><p>You will not be punished for your anger, you will be punished by your anger.", "Peace comes from within. Do not seek it without.", "<h3>Heading</h3><p>The most important moment of your life is now. The most important person in your life is the one you are with now, and the most important activity in your life is the one you are involved with now."]
+		function generateText(sentenceCount){
+			for (var i=0; i<sentenceCount; i++)
+			document.write(bodyText[Math.floor(Math.random()*7)]+" ")
+		}
+	</script>	
+</head>
+
+<body>
+
+	<header id="header"><p>Header...</p></header>
+
+	<div id="container">
+
+		<main id="center" class="column">
+			<article>
+			
+				<h1>Heading</h1>
+				<p><script>generateText(50)</script></p>
+			
+			</article>								
+		</main>
+
+		<nav id="left" class="column">
+			<h3>Left heading</h3>
+			<ul>
+				<li><a href="#">Link 1</a></li>
+				<li><a href="#">Link 2</a></li>
+				<li><a href="#">Link 3</a></li>
+				<li><a href="#">Link 4</a></li>
+				<li><a href="#">Link 5</a></li>
+			</ul>
+			<h3>Left heading</h3>
+			<ul>
+				<li><a href="#">Link 1</a></li>
+				<li><a href="#">Link 2</a></li>
+				<li><a href="#">Link 3</a></li>
+				<li><a href="#">Link 4</a></li>
+				<li><a href="#">Link 5</a></li>
+			</ul>
+
+		</nav>
+
+		<div id="right" class="column">
+			<h3>Right heading</h3>
+			<p><script>generateText(1)</script></p>
+		</div>
+
+	</div>
+
+	<div id="footer-wrapper">
+		<footer id="footer"><p>Footer...</p></footer>
+	</div>
+
 </body>
+
 </html>
